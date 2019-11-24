@@ -153,10 +153,12 @@ img {
         justify-content: space-between;
         list-style-type: none;
     }
-    &_result {
+    &_info {
         width: 50%;
         box-sizing: border-box;
         margin-right: 5px;
+    }
+    &_result {
         .game_ttl {
             &:after {
                 width: 35%;
@@ -185,15 +187,20 @@ img {
                 @include font(#000, 18, 25);
                 display: flex;
                 justify-content: center;
-                align-items: baseline;
+                align-items: center;
                 dt {
                     min-width: 90px;
                     margin-right: 10px;
+                    display: flex;
+                    align-items: center;
                     .win {
                         @include font(#f00,30,40);
                     }
                     .lose, .drow {
                         @include font(#000,30,40);
+                    }
+                    .pk {
+                        display: inline-block;
                     }
                     .vs {
                         display: inline-block;
@@ -205,16 +212,10 @@ img {
                         padding: 0 5px;
                     }
                 }
-            }
-        }
-    }
-    &_next {
-        width: 50%;
-        box-sizing: border-box;
-        margin-left: 5px;
-        .game_ttl {
-            &:after {
-                width: 35%;
+                dd  {
+                    @include font(#000, 18, 25);
+                    font-weight: bold;
+                }
             }
         }
     }
@@ -254,6 +255,9 @@ img {
         &_list {
             list-style-type: none;
             border: 1px solid $main-color;
+            & + .game_box_list {
+                margin-top: 20px;
+            }
         }
     }
     &_ttl {

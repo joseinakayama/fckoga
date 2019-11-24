@@ -1,14 +1,15 @@
 $(function() {
 
-    $('.game_box_tab li').click(function() {
-
-        var index = $('.game_box_tab li').index(this);
-
-        $('.game_box_tab li').removeClass('active');
-
+    $('.game_box_tab li').click(function(){
+        // クリックした要素の先祖要素の中で、classの値がgroupの要素を取得
+        const group = $(this).parents('.game_info'); 
+        group.find('.active').removeClass('active');
         $(this).addClass('active');
-
-        $('.game_area .game_box_category').removeClass('show').eq(index).addClass('show');
+        group.find('.show').removeClass('show');
+        // クリックしたタブからインデックス番号を取得
+        const index = $(this).index();
+        // クリックしたタブと同じインデックス番号をもつコンテンツを表示
+        group.find(".game_box_category").eq(index).addClass('show');
     });
 
 });
