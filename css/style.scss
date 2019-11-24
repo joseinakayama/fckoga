@@ -1,0 +1,12 @@
+@mixin font($color, $size, $height, $device: pc) {
+    color: $color;
+    @if $device == pc {
+      font-size: $size * 1px;
+    }
+    @if $device == sp {
+      font-size: $size/2 * 1px;
+      font-size: $size/$sp_base * 100 * 1vw;
+    }
+    line-height: $height/$size;
+  }
+
