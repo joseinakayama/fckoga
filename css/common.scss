@@ -158,6 +158,10 @@ img {
         box-sizing: border-box;
         margin-right: 5px;
     }
+    &_area {
+        height: 500px;
+        overflow-y: scroll;
+    }
     &_result {
         .game_ttl {
             &:after {
@@ -218,6 +222,14 @@ img {
                 }
             }
         }
+        &_vs {
+            @include font(#000,18,25);
+            text-align: center;
+        }
+        &_place {
+            @include font(#000,18,25);
+            text-align: center;
+        }
     }
     &_box {
         background: #fff;
@@ -274,5 +286,79 @@ img {
             height: 10%;
             background: #fff;
         }
+    }
+}
+
+.sns {
+    padding: 50px 0;
+    &_ttl {
+        color: #FFFD33;
+        font-size: 40px;
+        line-height: 1.5;
+        text-align: center;
+        position: relative;
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            width: 10%;
+            height: 10%;
+            background: #fff;
+        }
+    }
+    &_wrap {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        list-style-type: none;
+    }
+    &_tw {
+        margin-right: 50px;
+        &_ttl {
+            text-align: center;
+            @include font(#fff,24,30);
+        }
+        &_box {
+            margin-top: 30px;
+        }
+    }
+    &_fa {
+        margin-left: 50px;
+        &_ttl {
+            text-align: center;
+            @include font(#fff,24,30);
+        }
+        &_box {
+            margin-top: 30px;
+        }
+    }
+}
+
+.schedule {
+    padding: 50px 0;
+    &_ttl {
+        color: #FFFD33;
+        font-size: 40px;
+        line-height: 1.5;
+        text-align: center;
+        position: relative;
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            width: 25%;
+            height: 10%;
+            background: #fff;
+        }
+    }
+    &_img {
+        margin-top: 30px;
+        text-align: center;
     }
 }

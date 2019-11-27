@@ -205,6 +205,11 @@ img {
   margin-right: 5px;
 }
 
+.game_area {
+  height: 500px;
+  overflow-y: scroll;
+}
+
 .game_result .game_ttl:after {
   width: 35%;
 }
@@ -301,6 +306,20 @@ img {
   font-weight: bold;
 }
 
+.game_result_vs {
+  color: #000;
+  font-size: 18px;
+  line-height: 1.38889;
+  text-align: center;
+}
+
+.game_result_place {
+  color: #000;
+  font-size: 18px;
+  line-height: 1.38889;
+  text-align: center;
+}
+
 .game_box {
   background: #fff;
   margin-top: 30px;
@@ -378,5 +397,99 @@ img {
   width: 15%;
   height: 10%;
   background: #fff;
+}
+
+.sns {
+  padding: 50px 0;
+}
+
+.sns_ttl {
+  color: #FFFD33;
+  font-size: 40px;
+  line-height: 1.5;
+  text-align: center;
+  position: relative;
+}
+
+.sns_ttl:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 10%;
+  height: 10%;
+  background: #fff;
+}
+
+.sns_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 40px;
+  list-style-type: none;
+}
+
+.sns_tw {
+  margin-right: 50px;
+}
+
+.sns_tw_ttl {
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.sns_tw_box {
+  margin-top: 30px;
+}
+
+.sns_fa {
+  margin-left: 50px;
+}
+
+.sns_fa_ttl {
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.sns_fa_box {
+  margin-top: 30px;
+}
+
+.schedule {
+  padding: 50px 0;
+}
+
+.schedule_ttl {
+  color: #FFFD33;
+  font-size: 40px;
+  line-height: 1.5;
+  text-align: center;
+  position: relative;
+}
+
+.schedule_ttl:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 25%;
+  height: 10%;
+  background: #fff;
+}
+
+.schedule_img {
+  margin-top: 30px;
+  text-align: center;
 }
 /*# sourceMappingURL=common.css.map */
