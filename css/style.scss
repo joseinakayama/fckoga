@@ -10,3 +10,320 @@
     line-height: $height/$size;
   }
 
+  $main-color: #530000;
+  $sub-color: #FFFD33;
+
+.inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.ttl {
+  @include font($sub-color, 40,60);
+  text-align: center;
+  position: relative;
+  &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 15%;
+      height: 10%;
+      background: #fff;
+  }
+}
+
+.banner {
+    padding: 50px 0;
+    &_list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        list-style-type: none;
+        &_img {
+            padding: 0 10px 10px;
+            a {
+                display: block;
+                width: 250px;
+            }
+        }
+    }
+}
+
+.news {
+    padding: 30px 0;
+    background: url(../img/bg_01.jpg) center;
+    background-attachment: fixed;
+    background-size: cover;
+    &_wrap {
+        width: 100%;
+    }
+    &_box {
+        background: #fff;
+        margin-top: 30px;
+        padding:30px;
+        height: 500px;
+        overflow-y: scroll;
+        dl {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #999;
+            dt {
+                @include font($main-color, 16, 24);
+            }
+            dd {
+                @include font($main-color, 20, 30);
+                .cate {
+                    @include font($main-color, 16, 24);
+                    display: inline-block;
+                    width: 100px;
+                    text-align: center;
+                    padding: 0 10px;
+                    color: $main-color;
+                    &_red {
+                        background: #f00;
+                    }
+                    &_blue {
+                        background: #00f;
+                    }
+                }
+            }
+        }
+    }
+}
+
+  .game {
+    padding: 50px 0;
+    .result {
+      .ttl {
+          &:after {
+              width: 35%;
+          }
+      }
+    }
+    .next {
+      .ttl {
+          &:after {
+              width: 25%;
+          }
+      }
+    }
+    &_wrap {
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+    }
+    &_info {
+        width: 45%;
+        box-sizing: border-box;
+        margin-right: 5px;
+    }
+    &_area {
+        height: 500px;
+        overflow-y: scroll;
+    }
+    &_result {
+        &_date {
+            background: $main-color;
+            @include font(#fff, 25, 35);
+            text-align: center;
+        }
+        &_category {
+            @include font($main-color, 22, 28);
+            text-align: center;
+            margin-top: 10px;
+        }
+        &_match {
+            @include font($main-color, 22, 28);
+            text-align: center;
+            margin-top: 10px;
+            padding-left: 10px;
+        }
+        &_score {
+            margin-top: 10px;
+            padding-left: 10px;
+            dl {
+                @include font(#000, 18, 25);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                dt {
+                    min-width: 90px;
+                    margin-right: 10px;
+                    display: flex;
+                    align-items: center;
+                    .win {
+                        @include font(#f00,30,40);
+                    }
+                    .lose, .drow {
+                        @include font(#000,30,40);
+                    }
+                    .pk {
+                        display: inline-block;
+                    }
+                    .vs {
+                        display: inline-block;
+                        padding-left: 10px;
+                    }
+                    b {
+                        @include font(#000,30,40);
+                        display: inline-block;
+                        padding: 0 5px;
+                    }
+                }
+                dd  {
+                    @include font(#000, 18, 25);
+                    font-weight: bold;
+                }
+            }
+        }
+        &_vs {
+            @include font(#000,18,25);
+            text-align: center;
+        }
+        &_place {
+            @include font(#000,18,25);
+            text-align: center;
+        }
+    }
+    &_box {
+        background: #fff;
+        margin-top: 30px;
+        &_tab {
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+            li {
+                width: 20%;
+                padding: 10px 0;
+                text-align: center;
+                box-sizing: border-box;
+                @include font($main-color, 16, 16);
+                border-right: 1px solid $main-color;
+                background: $sub-color;
+                cursor: pointer;
+                &:last-child {
+                    border-right: none;
+                }
+                &.active {
+                    background: #fff;
+                    cursor: auto;
+                }
+            }
+        }
+        &_category {
+            @include font($main-color,16,16);
+            padding: 15px;
+            display: none;
+            &.show {
+                display: block;
+            }
+        }
+        &_list {
+            list-style-type: none;
+            border: 1px solid $main-color;
+            & + .game_box_list {
+                margin-top: 20px;
+            }
+        }
+    }
+    &_ttl {
+        @include font($sub-color, 40,60);
+        text-align: center;
+        position: relative;
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15%;
+            height: 10%;
+            background: #fff;
+        }
+    }
+}
+
+.sns {
+    padding: 50px 0;
+    background: url(../img/bg_02.jpg) center;
+    background-attachment: fixed;
+    background-size: cover;
+    .ttl {
+        &:after {
+            width: 10%;
+        }
+    }
+    &_wrap {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        list-style-type: none;
+    }
+    &_tw {
+        margin-right: 50px;
+        &_ttl {
+            text-align: center;
+            @include font(#fff,24,30);
+        }
+        &_box {
+            margin-top: 30px;
+        }
+    }
+    &_fa {
+        margin-left: 50px;
+        &_ttl {
+            text-align: center;
+            @include font(#fff,24,30);
+        }
+        &_box {
+            margin-top: 30px;
+        }
+    }
+}
+
+.schedule {
+    padding: 50px 0;
+    .ttl {
+        &:after {
+            width: 25%;
+        }
+    }
+    &_img {
+        margin-top: 30px;
+        text-align: center;
+    }
+}
+
+.contact {
+  padding: 50px 0;
+  background: #F2F2F2;
+  .ttl {
+    color: $main-color;
+    &:after {
+      width: 20%;
+      background: $sub-color;
+    }
+  }
+  &_txt {
+    text-align: center;
+    @include font($main-color,18, 25);
+    margin-top: 40px;
+  }
+  &_btn {
+    text-align: center;
+    margin-top: 30px;
+    a {
+      display: inline-block;
+      width: 300px;
+      height: 50px;
+      background: $main-color;
+      @include font(#fff,20,30);
+      text-decoration: none;
+      border-radius: 30px;
+      vertical-align: middle;
+      padding: 10px 0;
+    }
+  }
+}
