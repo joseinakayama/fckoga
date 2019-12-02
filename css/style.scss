@@ -46,6 +46,10 @@
             a {
                 display: block;
                 width: 250px;
+                transition: opacity 0.5s;
+                &:hover {
+                    opacity: 0.8;
+                }
             }
         }
     }

@@ -31,7 +31,6 @@ img {
     &_inner {
         display: flex;
         justify-content: space-between;
-        height: 3.75vw;
         background: #fff;
     }
     &_logo {
@@ -42,7 +41,6 @@ img {
         display: flex;
         justify-content: flex-start;
         list-style-type: none;
-        height: 3.75vw;
         width: 50.625vw;
         &_item {
             display: flex;
@@ -56,7 +54,6 @@ img {
                 font-size: 1.25vw;
                 font-weight: 600;
                 text-decoration: none;
-                height: 3.75vw;
                 display: flex;
                 align-items: center;
                 justify-content: center;
