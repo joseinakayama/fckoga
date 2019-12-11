@@ -28,14 +28,17 @@ img {
 }
 
 .header {
+    background: #fff;
     &_inner {
         display: flex;
         justify-content: space-between;
-        background: #fff;
+        max-width: 1366px;
+        width: 90%;
+        margin: 0 auto;
     }
     &_logo {
         margin: 0.3125vw 0 0.3125vw 1.875vw;
-        width: 12.5vw;
+        width: 100 / 1366 * 100%;
     }
     &_list {
         display: flex;
@@ -48,16 +51,41 @@ img {
             border-left: 2px solid $main-color;
             width: 16.66%;
             transform: skew(-20deg);
+            cursor: pointer;
+            position: relative;
             a {
                 width: 100%;
                 @include font($main-color,20,25);
                 font-size: 1.25vw;
                 font-weight: 600;
                 text-decoration: none;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                display: block;
+                text-align: center;
                 transform: skew(20deg);
+            }
+            &:last-child {
+                border-right: 2px solid $main-color;
+            }
+            &:hover {
+                background: $main-color;
+                a {
+                    @include font(#fff,20,25);
+                    font-size: 1.25vw;
+                }
+            }
+            &.menu {
+                &:hover {
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        bottom: -10px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        border-right: 10px solid transparent;
+                        border-left: 10px solid transparent;
+                        border-top: 10px solid $main-color;
+                    }
+                }
             }
         }
     }
