@@ -1,0 +1,58 @@
+
+$pc: 1280;
+$sp: 768;
+$pc_base: 1366;
+$pc_inner: 1100;
+$sp_base: 767;
+$sp_inner: 670;
+
+$main-color: #530000;
+$sub-color: #FFFD33;
+
+// font
+@mixin font($color, $size, $height, $device: pc) {
+    color: $color;
+    @if $device == pc {
+      font-size: $size * 1px;
+    }
+    @if $device == sp {
+      font-size: $size/2 * 1px;
+      font-size: $size/$sp_base * 100 * 1vw;
+    }
+    line-height: $height/$size;
+  }
+
+// BREAK POINT
+$width-pc: 1366 !default;
+$width-sp: 768 !default;
+$breakpoints:(
+	'sm': 'screen and (max-width: 768px)',
+	'md': 'screen and (min-width: 769px)',
+	'lg': 'screen and (max-width: 1366px)',
+	'xl': 'screen and (min-width: 1367px)',
+) !default;
+@mixin mq($breakpoint: sm) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+			@content;
+	}
+}
+
+// sp_base //
+@mixin sp_base_w($width) {
+    width: $width/$sp_base * 100 * 1vw;
+  }
+  @mixin sp_base_h($height) {
+    height: $height/$sp_base * 100 * 1vw;
+  }
+  @mixin sp_base_pd($top, $right, $bottom, $left) {
+    padding: $top/$sp_base * 100 * 1% $right/$sp_base * 100 * 1% $bottom/$sp_base *
+      100 * 1% $left/$sp_base * 100 * 1%;
+    box-sizing: border-box;
+  }
+  @mixin sp_base_mg($top, $right, $bottom, $left) {
+    margin: $top/$sp_base * 100 * 1% $right/$sp_base * 100 * 1% $bottom/$sp_base *
+      100 * 1% $left/$sp_base * 100 * 1%;
+  }
+  @mixin sp_base_mg_auto($top, $bottom) {
+    margin: $top/$sp_base * 100 * 1% auto $bottom/$sp_base * 100 * 1%;
+  }

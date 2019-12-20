@@ -1,17 +1,4 @@
-@mixin font($color, $size, $height, $device: pc) {
-    color: $color;
-    @if $device == pc {
-      font-size: $size * 1px;
-    }
-    @if $device == sp {
-      font-size: $size/2 * 1px;
-      font-size: $size/$sp_base * 100 * 1vw;
-    }
-    line-height: $height/$size;
-  }
-
-  $main-color: #530000;
-  $sub-color: #FFFD33;
+@import '../common/css/mixin';
 
 .inner {
     max-width: 1100px;
