@@ -11,6 +11,13 @@ body {
 img {
   width: 100%; }
 
+.sp {
+  display: none; }
+
+@media screen and (max-width: 768px) {
+  .pc {
+    display: none; } }
+
 .header {
   background: #fff;
   position: fixed;
@@ -138,15 +145,72 @@ img {
           height: 3px;
           position: absolute;
           left: 0;
-          background: #530000; }
+          background: #530000;
+          -webkit-transition: all .5s;
+          -o-transition: all .5s;
+          transition: all .5s; }
           .header #nav_toggle span:nth-child(1) {
             top: 0; }
           .header #nav_toggle span:nth-child(2) {
             top: 50%; }
           .header #nav_toggle span:nth-child(3) {
             top: 100%; } }
+  @media screen and (max-width: 768px) {
+    .header .open #nav_toggle {
+      z-index: 1000; }
+      .header .open #nav_toggle span:nth-child(1) {
+        top: 40%;
+        -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+                transform: rotate(45deg); }
+      .header .open #nav_toggle span:nth-child(2) {
+        display: none; }
+      .header .open #nav_toggle span:nth-child(3) {
+        top: 40%;
+        -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg); } }
   .header #g_nav {
     display: none; }
+  @media screen and (max-width: 768px) {
+    .header #g_nav {
+      display: none; }
+    .header .open #g_nav {
+      background-color: rgba(255, 255, 255, 0.8);
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0q;
+      bottom: 0;
+      z-index: 990; }
+    .header .open .g_nav_list {
+      padding: 14vw 5vw; }
+      .header .open .g_nav_list_item a {
+        display: block;
+        text-decoration: none;
+        color: #530000;
+        font-size: 25px;
+        font-size: 6.5189vw;
+        line-height: 1; }
+      .header .open .g_nav_list_item + .g_nav_list_item {
+        margin-top: 10%; }
+      .header .open .g_nav_list_item.menu {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; }
+        .header .open .g_nav_list_item.menu .dropmenu {
+          margin-left: 5%; }
+          .header .open .g_nav_list_item.menu .dropmenu_list a {
+            color: #530000;
+            font-size: 18px;
+            font-size: 4.69361vw;
+            line-height: 1; }
+          .header .open .g_nav_list_item.menu .dropmenu_list + .dropmenu_list {
+            margin-top: 5%; } }
 
 .footer {
   background: #fff;

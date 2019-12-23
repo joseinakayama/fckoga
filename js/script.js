@@ -12,4 +12,11 @@ $(function() {
         group.find(".game_box_category").eq(index).addClass('show');
     });
 
+   $('.kv_slider').slick({
+       autoplay: true,
+       autoplayspeed: 3000,
+       speed: 1000,
+       fade: true
+   });
+
 });

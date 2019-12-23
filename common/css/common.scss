@@ -8,17 +8,25 @@ body {
     background: $main-color;
     color: #fff;
     overflow: hidden;
-    font-family:"YuGothic", "Yu Gothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", verdana, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+    font-family:font-family: 'ヒラギノ角ゴシック','Hiragino Sans','メイリオ', Meiryo,sans-serif;;
 }
 img {
     width: 100%;
+}
+.sp {
+    display: none;
+}
+@include mq {
+    .pc {
+        display: none;
+    }
 }
 
 .header {
     background: #fff;
     position: fixed;
     width: 100%;
-    z-index: 1;
+    z-index: 100;
     &_inner {
         display: flex;
         justify-content: space-between;
@@ -137,6 +145,7 @@ img {
                 position: absolute;
                 left: 0;
                 background: $main-color;
+                transition: all .5s;
                 &:nth-child(1) {
                     top: 0;
                 }
@@ -149,8 +158,74 @@ img {
             }
         }
     }
+    .open {
+        @include mq {
+            #nav_toggle {
+                z-index: 1000;
+                span {
+                    &:nth-child(1) {
+                        top: 40%;
+                        transform: rotate(45deg);
+                    }
+                    &:nth-child(2) {
+                        display: none;
+                    }
+                    &:nth-child(3) {
+                        top: 40%;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
     #g_nav {
         display: none;
+    }
+    @include mq {
+        #g_nav {
+            display: none;
+        }
+        .open {
+            #g_nav {
+                background-color:rgba(255,255,255,0.8);
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0q;
+                bottom: 0;
+                z-index: 990;
+            }
+            .g_nav_list {
+                padding: 14vw 5vw;
+                &_item {
+                    a {
+                        display: block;
+                        text-decoration: none;
+                        @include font($main-color,50, 50,sp);
+                        font-weight: bold;
+                    }
+                    & + .g_nav_list_item {
+                        margin-top: 10%;
+                    }
+                    &.menu {
+                        display: flex;
+                        align-items: center;
+                        .dropmenu {
+                            margin-left: 5%;
+                            &_list {
+                                a {
+                                    @include font($main-color,36,36,sp);
+                                }
+                                & + .dropmenu_list {
+                                    margin-top: 5%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

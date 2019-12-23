@@ -45,5 +45,10 @@ $(function() {
             }
         });
     });
+
+    $('#nav_toggle').on('click',function() {
+        $('.header_inner').toggleClass('open');
+        console.log(1);
+    });
     
 });
