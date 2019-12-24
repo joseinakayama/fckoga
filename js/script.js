@@ -16,7 +16,9 @@ $(function() {
        autoplay: true,
        autoplayspeed: 3000,
        speed: 1000,
-       fade: true
+       fade: true,
+       dots: true,
+       dotsClass: 'slide-dots'
    });
 
 });
