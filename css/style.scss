@@ -3,6 +3,9 @@
 .inner {
     max-width: 1100px;
     margin: 0 auto;
+    @include mq {
+        width: 90%;
+    }
 }
 
 .ttl {
@@ -23,6 +26,9 @@
 
 .kv{
     padding-top: 3%;
+    @include mq {
+        padding-top: 13%;
+    }
     .slide-dots {
         text-align: center;
         position: absolute;
@@ -32,7 +38,10 @@
         margin-bottom: 3%;
         li {
             display: inline-block;
-            margin: 0 10px;
+            margin: 0 7px;
+            @include mq {
+                margin: 0 5px;
+            }
             button {
                 position: relative;
                 text-indent: -9999px;
@@ -40,6 +49,13 @@
                 border-radius: 50%;
                 outline: none;
                 cursor: pointer;
+                padding: 0;
+                width: 13px;
+                height: 13px;
+                @include mq {
+                    width: 10px;
+                    height: 10px;
+                }
             }
         }
         .slick-active {
@@ -48,9 +64,9 @@
             }
         }
     }
-    .slick-slide {
+    .slick-current {
             img {
-                animation: zoomUp 10s linear infinite normal both;
+                animation: zoomUp 15s linear infinite normal both;
             }
     }
 }
@@ -77,6 +93,9 @@
                 display: block;
                 width: 250px;
                 transition: opacity 0.5s;
+                @include mq {
+                    width: 145px;
+                }
                 &:hover {
                     opacity: 0.8;
                 }
@@ -92,6 +111,16 @@
     background-size: cover;
     &_wrap {
         width: 100%;
+        .ttl {
+            color: $main-color;
+            &:after {
+                width: 17%;
+                background: $sub-color;
+                @include mq {
+                    width: 45%;
+                }
+            }
+        }
     }
     &_box {
         background: #fff;
@@ -99,6 +128,7 @@
         padding:30px;
         height: 500px;
         overflow-y: scroll;
+        border-radius: 10px;
         dl {
             margin-bottom: 10px;
             padding-bottom: 10px;
@@ -132,14 +162,23 @@
     .result {
       .ttl {
           &:after {
-              width: 35%;
+              width: 45%;
+              @include mq {
+                  width: 60%;
+              }
           }
       }
     }
     .next {
+        @include mq {
+            margin-top: 30px;
+        }
       .ttl {
           &:after {
-              width: 25%;
+              width: 35%;
+              @include mq {
+                width: 45%;
+            }
           }
       }
     }
@@ -147,11 +186,18 @@
         display: flex;
         justify-content: space-between;
         list-style-type: none;
+        @include mq {
+            flex-direction: column;
+        }
     }
     &_info {
         width: 45%;
         box-sizing: border-box;
         margin-right: 5px;
+        @include mq {
+            width: 100%;
+            margin-right: 0;
+        }
     }
     &_area {
         height: 500px;
@@ -160,8 +206,12 @@
     &_result {
         &_date {
             background: $main-color;
-            @include font(#fff, 25, 35);
+            @include font(#fff, 20, 25,);
             text-align: center;
+            padding: 10px;
+            @include mq {
+                @include font(#fff, 36, 45, sp);
+            }
         }
         &_category {
             @include font($main-color, 22, 28);
@@ -171,59 +221,99 @@
         &_match {
             @include font($main-color, 22, 28);
             text-align: center;
-            margin-top: 10px;
-            padding-left: 10px;
+            padding: 10px 10px 0;
+            @include mq {
+                @include font($main-color, 40, 55, sp);
+            }
         }
         &_score {
-            margin-top: 10px;
-            padding-left: 10px;
+            padding: 10px;
             dl {
                 @include font(#000, 18, 25);
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                @include mq {
+                    flex-direction: column;
+                    @include font(#000, 36, 45, sp);
+                }
+                & + dl {
+                    margin-top: 5px;
+                    padding-top: 5px;
+                    border-top: 1px dotted $main-color;
+                }
                 dt {
+                    @include font(#000, 14, 20);
                     min-width: 90px;
-                    margin-right: 10px;
                     display: flex;
                     align-items: center;
+                    justify-content: center;
+                    @include mq {
+                        @include font(#000, 36, 45, sp);
+                    }
                     .win {
                         @include font(#f00,30,40);
+                        @include mq {
+                            @include font(#f00, 60, 75, sp);
+                        }
                     }
                     .lose, .drow {
                         @include font(#000,30,40);
+                        @include mq {
+                            @include font(#000, 60, 75, sp);
+                        }
                     }
                     .pk {
                         display: inline-block;
-                    }
-                    .vs {
-                        display: inline-block;
-                        padding-left: 10px;
                     }
                     b {
                         @include font(#000,30,40);
                         display: inline-block;
                         padding: 0 5px;
+                        @include mq {
+                            @include font(#000, 60, 75, sp);
+                        }
                     }
                 }
                 dd  {
                     @include font(#000, 18, 25);
                     font-weight: bold;
+                    @include mq {
+                        @include font(#000, 36, 45, sp);
+                    }
+                    &.vs {
+                        display: inline-block;
+                        padding: 0 10px;
+                        font-weight: normal;
+                        @include mq{
+                            padding: 3% 0;
+                        }
+                    }
                 }
             }
         }
         &_vs {
             @include font(#000,18,25);
             text-align: center;
+            padding: 10px 10px 0;
+            @include mq {
+                @include font(#000, 36, 45, sp);
+            }
         }
         &_place {
             @include font(#000,18,25);
             text-align: center;
+            padding: 10px;
+            @include mq {
+                @include font(#000, 36, 45, sp);
+            }
         }
     }
     &_box {
         background: #fff;
         margin-top: 30px;
+        border-radius: 10px;
+        overflow: hidden;
         &_tab {
             display: flex;
             justify-content: space-between;
@@ -285,8 +375,13 @@
     background-attachment: fixed;
     background-size: cover;
     .ttl {
+        color: $main-color;
         &:after {
             width: 10%;
+            background: $sub-color;
+            @include mq {
+                width: 30%;
+            }
         }
     }
     &_wrap {
@@ -294,25 +389,42 @@
         justify-content: center;
         margin-top: 40px;
         list-style-type: none;
+        @include mq {
+            flex-direction: column;
+        }
     }
     &_tw {
         margin-right: 50px;
+        @include mq {
+            margin-right: 0;
+        }
         &_ttl {
             text-align: center;
-            @include font(#fff,24,30);
+            @include font($main-color,24,30);
         }
         &_box {
             margin-top: 30px;
+            iframe {
+                width: 100% !important;
+                height: 500px !important;
+            }
         }
     }
     &_fa {
         margin-left: 50px;
+        @include mq {
+            margin: 30px 0 0;
+        }
         &_ttl {
             text-align: center;
-            @include font(#fff,24,30);
+            @include font($main-color,24,30);
         }
         &_box {
             margin-top: 30px;
+            iframe {
+                width: 100% !important;
+                height: 500px !important;
+            }
         }
     }
 }
@@ -322,11 +434,28 @@
     .ttl {
         &:after {
             width: 25%;
+            @include mq {
+                width: 75%;
+            }
         }
     }
     &_img {
-        margin-top: 30px;
-        text-align: center;
+        margin: 30px auto 0;
+        max-width: 800px;
+        position: relative;
+        padding-bottom: 75%; /* 縦横比 */
+        height: 0;
+        overflow: hidden;
+        @include mq {
+            padding-top: 75%;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+        }
     }
 }
 
@@ -338,6 +467,9 @@
     &:after {
       width: 20%;
       background: $sub-color;
+      @include mq {
+          width: 70%;
+      }
     }
   }
   &_txt {

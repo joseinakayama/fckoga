@@ -166,6 +166,7 @@ img {
                     &:nth-child(1) {
                         top: 40%;
                         transform: rotate(45deg);
+                        background: #fff;
                     }
                     &:nth-child(2) {
                         display: none;
@@ -173,6 +174,7 @@ img {
                     &:nth-child(3) {
                         top: 40%;
                         transform: rotate(-45deg);
+                        background: #fff;
                     }
                 }
             }
@@ -187,7 +189,7 @@ img {
         }
         .open {
             #g_nav {
-                background-color:rgba(255,255,255,0.8);
+                background-color:rgba(83,0,0,0.8);
                 display: block;
                 position: fixed;
                 top: 0;
@@ -202,7 +204,7 @@ img {
                     a {
                         display: block;
                         text-decoration: none;
-                        @include font($main-color,50, 50,sp);
+                        @include font(#fff,50, 50,sp);
                         font-weight: bold;
                     }
                     & + .g_nav_list_item {
@@ -215,7 +217,7 @@ img {
                             margin-left: 5%;
                             &_list {
                                 a {
-                                    @include font($main-color,36,36,sp);
+                                    @include font(#fff,36,36,sp);
                                 }
                                 & + .dropmenu_list {
                                     margin-top: 5%;

@@ -217,6 +217,7 @@ img {
     top: 40%;
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
+    background: #fff;
   }
   .header .open #nav_toggle span:nth-child(2) {
     display: none;
@@ -225,6 +226,7 @@ img {
     top: 40%;
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
+    background: #fff;
   }
 }
 
@@ -237,7 +239,7 @@ img {
     display: none;
   }
   .header .open #g_nav {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(83, 0, 0, 0.8);
     display: block;
     position: fixed;
     top: 0;
@@ -252,7 +254,7 @@ img {
   .header .open .g_nav_list_item a {
     display: block;
     text-decoration: none;
-    color: #530000;
+    color: #fff;
     font-size: 25px;
     font-size: 6.5189vw;
     line-height: 1;
@@ -273,7 +275,7 @@ img {
     margin-left: 5%;
   }
   .header .open .g_nav_list_item.menu .dropmenu_list a {
-    color: #530000;
+    color: #fff;
     font-size: 18px;
     font-size: 4.69361vw;
     line-height: 1;
