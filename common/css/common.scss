@@ -194,9 +194,12 @@ img {
                 position: fixed;
                 top: 0;
                 left: 0;
-                right: 0q;
+                right: 0;
                 bottom: 0;
+                width: 100vw;
+                height: 100vh;
                 z-index: 990;
+                transition: all .5s;
             }
             .g_nav_list {
                 padding: 14vw 5vw;

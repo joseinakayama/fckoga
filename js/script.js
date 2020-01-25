@@ -21,4 +21,18 @@ $(function() {
        dotsClass: 'slide-dots'
    });
 
+   $(window).on('load scroll resize', function() {
+    if ( $(window).scrollTop() <= 0 ) return;
+    whQuarter = $(window).height() / 4;
+    sh = $(window).scrollTop() + $(window).height();
+    
+    var pointTtl = $('.ttl, .news_box, .game_box, .sns_tw, .sns_fa');
+
+    pointTtl.each(function () {
+        if (sh > $(this).offset().top + whQuarter) {
+            $(this).addClass('display-on');
+        }
+    });
+});
+
 });

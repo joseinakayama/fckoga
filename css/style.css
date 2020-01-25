@@ -16,6 +16,9 @@
   line-height: 1.5;
   text-align: center;
   position: relative;
+  opacity: 0;
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
 }
 
 .ttl:after {
@@ -28,6 +31,10 @@
   width: 15%;
   height: 10%;
   background: #fff;
+}
+
+.ttl.display-on {
+  opacity: 1;
 }
 
 .kv {
@@ -127,8 +134,24 @@
   list-style-type: none;
 }
 
+@media screen and (max-width: 768px) {
+  .banner_list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .banner_list_img {
   padding: 0 10px 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .banner_list_img {
+    width: 100%;
+    padding: 0 5% 5%;
+  }
 }
 
 .banner_list_img a {
@@ -140,7 +163,7 @@
 
 @media screen and (max-width: 768px) {
   .banner_list_img a {
-    width: 145px;
+    width: 100%;
   }
 }
 
@@ -149,10 +172,18 @@
 }
 
 .news {
-  padding: 30px 0;
-  background: url(../img/bg_01.jpg) center;
+  padding: 100px 0;
+  background: url(../img/bg_01.jpg) center center;
   background-attachment: fixed;
   background-size: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .news {
+    background: url(../img/bg_01_sp.jpg) center center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
 }
 
 .news_wrap {
@@ -176,11 +207,22 @@
 
 .news_box {
   background: #fff;
-  margin-top: 30px;
+  margin-top: 50px;
   padding: 30px;
   height: 500px;
   overflow-y: scroll;
   border-radius: 10px;
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.news_box.display-on {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .news_box dl {
@@ -221,7 +263,7 @@
 }
 
 .game {
-  padding: 50px 0;
+  padding: 100px 0;
 }
 
 .game .result .ttl:after {
@@ -236,7 +278,7 @@
 
 @media screen and (max-width: 768px) {
   .game .next {
-    margin-top: 30px;
+    margin-top: 50px;
   }
 }
 
@@ -512,6 +554,17 @@
   margin-top: 30px;
   border-radius: 10px;
   overflow: hidden;
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.game_box.display-on {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .game_box_tab {
@@ -589,10 +642,18 @@
 }
 
 .sns {
-  padding: 50px 0;
+  padding: 100px 0;
   background: url(../img/bg_02.jpg) center;
   background-attachment: fixed;
   background-size: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .sns {
+    background: url(../img/bg_02_sp.jpg) center center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
 }
 
 .sns .ttl {
@@ -632,6 +693,17 @@
 
 .sns_tw {
   margin-right: 50px;
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.sns_tw.display-on {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 @media screen and (max-width: 768px) {
@@ -652,17 +724,34 @@
 }
 
 .sns_tw_box iframe {
-  width: 100% !important;
+  width: 340px !important;
   height: 500px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .sns_tw_box iframe {
+    width: 100%;
+  }
 }
 
 .sns_fa {
   margin-left: 50px;
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.sns_fa.display-on {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 @media screen and (max-width: 768px) {
   .sns_fa {
-    margin: 30px 0 0;
+    margin: 50px 0 0;
   }
 }
 
@@ -678,12 +767,18 @@
 }
 
 .sns_fa_box iframe {
-  width: 100% !important;
-  height: 500px !important;
+  width: 340px;
+  height: 500px;
+}
+
+@media screen and (max-width: 768px) {
+  .sns_fa_box iframe {
+    width: 100%;
+  }
 }
 
 .schedule {
-  padding: 50px 0;
+  padding: 100px 0;
 }
 
 .schedule .ttl:after {
@@ -721,7 +816,7 @@
 }
 
 .contact {
-  padding: 50px 0;
+  padding: 100px 0;
   background: #F2F2F2;
 }
 

@@ -19,6 +19,24 @@ $(function() {
         kv.addClass('active');
     });
 
+    //--------------------------------------------------------------[img_change]
+    var $change = $(".change"),
+    sp = "_sp.",
+    pc = "_pc.",
+    bp = 767;
+        function imgSwitch() {
+        var ww = $(window).width();
+        $change.each(function() {
+        var $this = $(this);
+        if (ww >= bp) {
+            $this.attr("src", $this.attr("src").replace(sp, pc));
+        } else {
+            $this.attr("src", $this.attr("src").replace(pc, sp));
+        }
+        });
+        }
+    imgSwitch();        
+
     //--------------------------------------------------------------[trigger]
     $(window).on('scroll resize', function() {
         if ( $(window).scrollTop() <= 0 ) return;
@@ -48,7 +66,6 @@ $(function() {
 
     $('#nav_toggle').on('click',function() {
         $('.header_inner').toggleClass('open');
-        console.log(1);
     });
     
 });
