@@ -58,8 +58,8 @@
                 width: 13px;
                 height: 13px;
                 @include mq {
-                    width: 10px;
-                    height: 10px;
+                    width: 5vw;
+                    height: 5vw;
                 }
             }
         }
@@ -117,14 +117,22 @@
 }
 
 .news {
-    padding: 100px 0;
-    background: url(../img/bg_01.jpg) center center;
-    background-attachment: fixed;
-    background-size: cover;
-    @include mq {
-        background: url(../img/bg_01_sp.jpg) center center;
-        background-attachment: fixed;
+    padding: 40px 0 100px;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(../img/bg_01.jpg) center center;
         background-size: cover;
+        z-index: -1px;
+        @include mq {
+            background: url(../img/bg_01_sp.jpg) center center;
+            background-size: cover;
+        }
     }
     &_wrap {
         width: 100%;
@@ -401,14 +409,22 @@
 }
 
 .sns {
-    padding: 100px 0;
-    background: url(../img/bg_02.jpg) center;
-    background-attachment: fixed;
-    background-size: cover;
-    @include mq {
-        background: url(../img/bg_02_sp.jpg) center center;
-        background-attachment: fixed;
+    padding: 40px 0 100px;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(../img/bg_02.jpg) center center;
         background-size: cover;
+        z-index: -1px;
+        @include mq {
+            background: url(../img/bg_03_sp.jpg) center center;
+            background-size: cover;
+        }
     }
     .ttl {
         color: $main-color;

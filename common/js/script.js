@@ -24,6 +24,7 @@ $(function() {
     sp = "_sp.",
     pc = "_pc.",
     bp = 767;
+
         function imgSwitch() {
         var ww = $(window).width();
         $change.each(function() {
