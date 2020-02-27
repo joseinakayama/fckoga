@@ -31,6 +31,8 @@
 
 .kv{
     padding-top: 3%;
+    width: 100%;
+    height: 51.244vw;
     @include mq {
         padding-top: 13%;
     }

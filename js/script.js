@@ -13,12 +13,14 @@ $(function() {
     });
 
    $('.kv_slider').slick({
+    //    centerMode: true,
+    //    centerPadding: '100px',
        autoplay: true,
        autoplayspeed: 3000,
        speed: 1000,
        fade: true,
        dots: true,
-       dotsClass: 'slide-dots'
+       dotsClass: 'slide-dots',
    });
 
    $(window).on('load scroll resize', function() {
